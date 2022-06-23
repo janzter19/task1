@@ -10,21 +10,21 @@
 	<style type="text/css">
 		
 		.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-}
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+			border-radius: 5px;
+		}
 
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-}
+
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+
+
+		.container {
+			padding: 2px 16px;
+		}
 
 	</style>
 
@@ -41,12 +41,6 @@
 	<div id="divTestViewOutput">-- --</div>
 </body>
 </html>
-
-
-<?php
-
-
-?>
 
 <script type="text/javascript">
 	
@@ -103,7 +97,7 @@
 		$this_id1 = this.id;
 
 		$jqOut = 'divTestViewOutput';
-	
+
 
 		//SEND THE DATA USING JQUERY POST
 		$ajax = $.post('php/test/test.create.php', {}, function() {

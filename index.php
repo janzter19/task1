@@ -36,8 +36,7 @@
 	<script src="js/jquery-1.11.3.min.js"></script>
 
 
-	<a href="#" id="testPush" name="testPush">PUSH</a>
-	<a href="#" id="testPull" name="testPull">PULL</a>
+	<a href="#" id="testPush" name="testPush">PUSH</a> | <a href="#" id="testPull" name="testPull">PULL</a> | <a href="#" id="testCreate" name="testCreate">CREATE</a>
 	<br />
 	<div id="divTestViewOutput">-- --</div>
 </body>
@@ -84,6 +83,30 @@
 
 		//SEND THE DATA USING JQUERY POST
 		$ajax = $.post('php/test/test.pull.php', {}, function() {
+		})
+		.done(function($jqData) {
+			//RESULT
+			$("#"+$jqOut).empty().append($jqData);
+		})
+		.fail(function($jqData) {
+			//ERROR
+			$("#"+$jqOut).empty().append("ERROR");	
+		})
+		.always(function($jqData) {
+			//LOADING
+			//$("#ID").trigger('click');
+		});
+	});
+
+	$(document).on('click','#testCreate', function(event) {
+
+		$this_id1 = this.id;
+
+		$jqOut = 'divTestViewOutput';
+	
+
+		//SEND THE DATA USING JQUERY POST
+		$ajax = $.post('php/test/test.create.php', {}, function() {
 		})
 		.done(function($jqData) {
 			//RESULT
